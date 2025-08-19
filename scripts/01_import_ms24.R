@@ -1,4 +1,6 @@
+library(here)
 library(readr)
+library(dplyr)
 library(tidyverse)
 
 dataset1 <- read_csv("/Users/omarjeanbaptiste/Data/radiology/market-scan-contrast/raw/ccaeo240_0_0_0.csv")
