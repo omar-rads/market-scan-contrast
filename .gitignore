@@ -4,11 +4,5 @@
 .Rproj.user/
 renv/library/
 .DS_Store
-data/
-.Rhistory
-.RData
-.Renviron
-.Rproj.user/
-renv/library/
-.DS_Store
+data
 data/
