@@ -1,7 +1,7 @@
 library(readr)
 library(tidyverse)
 
-# dataset1 <- read_csv("/Users/omarjean-bap./Documents/Marketscan/MS24/ccaeo240_0_0_0.csv")
+dataset1 <- read_csv("/Users/omarjeanbaptiste/Data/radiology/market-scan-contrast/raw/ccaeo240_0_0_0.csv")
 
 #Here is the list of the variables I am keeping for the iodine study
 #Keeping less than original helps with keeping the csv size small
