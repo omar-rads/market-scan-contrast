@@ -2,14 +2,22 @@ library(here)
 library(readr)
 library(dplyr)
 library(tidyverse)
+library(stringr)
 
 dataset1 <- read_csv("/Users/omarjeanbaptiste/Data/radiology/market-scan-contrast/raw/ccaeo240_0_0_0.csv")
 
 #Here is the list of the variables I am keeping for the iodine study
 #Keeping less than original helps with keeping the csv size small
-varkeep <- c("ENROLID", "SEQNUM", "DX1", "PROC1", "SVCDATE", "YEAR",
-             "AGE", "COB", "REGION", "MSA", "AGEGRP", 
-             "SEX", "MSCLMID")
+varkeep <- c(
+  "ENROLID","MSCLMID","FACHDID","FACPROF",
+  "SVCDATE","YEAR",
+  "POS","REVCODE","SVCSCAT",
+  "PROCTYP","PROC1","PROCMOD",
+  "DX1","DX2","DX3","DX4",
+  "AGE","AGEGRP","SEX","REGION","MSA",
+  "NETPAY","PAY","COPAY","COINS","DEDUCT","ALLOWED"
+)
+
 #Here are the CPT codes - of note this is only for CT scans with and without
 #contrast ----
 cpt_codes <- c(

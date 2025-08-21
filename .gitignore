@@ -6,3 +6,5 @@ renv/library/
 .DS_Store
 data
 data/
+raw/
+parquet/
