@@ -14,12 +14,20 @@ files22  <- list.files(ms22_dir, pattern="\\.csv$", full.names = TRUE) # Should 
 
 # ---- 1) Keep only the columns we’ll use everywhere (lossless, standardized) ----
 varkeep <- c(
+  # IDs / linking
   "ENROLID","MSCLMID","FACHDID","FACPROF",
-  "SVCDATE","YEAR","POS","REVCODE","SVCSCAT",
-  "PROCTYP","PROC1","PROCMOD",
-  "DX1","DX2","DX3","DX4",
+  # dates
+  "SVCDATE","TSVCDAT","YEAR","PDDATE",
+  # procedures / classification
+  "PROC1","PROCTYP","PROCMOD","REVCODE","SVCSCAT","QTY","UNITS",
+  # diagnoses
+  "DX1","DX2","DX3","DX4","DXVER",
+  # costs
+  "NETPAY","PAY","COPAY","COINS","DEDUCT",
+  # demographics / geography
   "AGE","AGEGRP","SEX","REGION","MSA",
-  "NETPAY","PAY","COPAY","COINS","DEDUCT","ALLOWED"
+  # nice-to-have context
+  "STDPLAC","PLANTYP","NTWKPROV","PROVID","NPI","MDC","DATATYP","MEDADV"
 )
 
 # ---- 2) Bronze writer: stream -> light-clean -> write partitioned Parquet (LOCAL) ----
